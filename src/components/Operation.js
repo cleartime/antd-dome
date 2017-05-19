@@ -269,24 +269,7 @@ const emergencyData = [{
 	name: '借款人手机关联合同',
 }];
 const AssociatedContract = ({ routes }) => (
-	<div className="one">
-		<p className="letterTitle">单位名称关联合同</p>
-		<Table  columns={nameColumns} dataSource={nameData}/>
-		<p className="letterTitle">单位电话关联合同</p>
-		<Table  columns={telephoneColumns} dataSource={telephoneData}/>
-		<p className="letterTitle">借款人手机关联合同</p>
-		<Table  columns={phoneColumns} dataSource={phoneData}/>
-		<p className="letterTitle">急借通信息</p>
-		<Table  columns={emergencyColumns} dataSource={emergencyData}/>
-		
-		<p className="letterTitle">单位名称关联合同</p>
-		<Table  columns={nameColumns} dataSource={nameData}/>
-		<p className="letterTitle">单位电话关联合同</p>
-		<Table  columns={telephoneColumns} dataSource={telephoneData}/>
-		<p className="letterTitle">借款人手机关联合同</p>
-		<Table  columns={phoneColumns} dataSource={phoneData}/>
-		<p className="letterTitle">急借通信息</p>
-		<Table  columns={emergencyColumns} dataSource={emergencyData}/>
+	<div className="overflowAuto">
 		<p className="letterTitle">单位名称关联合同</p>
 		<Table  columns={nameColumns} dataSource={nameData}/>
 		<p className="letterTitle">单位电话关联合同</p>
@@ -298,6 +281,51 @@ const AssociatedContract = ({ routes }) => (
 	</div>
 )
 
+
+const presentationColumns = [{
+	title: '',
+    dataIndex: 'age',
+    width: 40,
+},{
+	title: '年月',
+	dataIndex: 'yuears',
+}, {
+	title: '月通话次数',
+	dataIndex: 'frequency',
+}, {
+	title: '月通话时长（分钟）',
+	dataIndex: 'duration',
+}];
+const presentationData = [{
+	age: '1',
+	yuears: '单位名称关联合同',
+	frequency: '123',
+	duration: '借款人手机关联合同',
+}];
+
+const Presentation = ({ routes }) => (
+	<div>
+		<p className="letterTitle">聚信力报告</p>
+		<ul className="personalList clearfix">
+			<li><span>报告时间:</span><strong>15658451252</strong></li>
+			<li><span>姓名:</span><strong>段誉</strong></li>
+			<li><span>身份证号:</span><strong>15658451252</strong></li>
+			<li><span>年龄:</span><strong>硕士</strong></li>
+			<li><span>归属地:</span><strong>上海市静安区西藏北路110弄110号</strong></li>
+			<li><span>入网时长:</span><strong>是</strong></li>
+		</ul>
+		<p className="letterTitle">联系人通话频率</p>
+		<ul className="personalList clearfix">
+			<li><span>联系人姓名:</span><strong>15658451252</strong></li>
+			<li><span>联系人关系:</span><strong>段誉</strong></li>
+			<li><span>联系人手机号:</span><strong>15658451252</strong></li>
+			<li><span>号码归属地:</span><strong>硕士</strong></li>
+			<li><span>首次联系时间:</span><strong>上海市静安区西藏北路110弄110号</strong></li>
+			<li><span>最后联系时间:</span><strong>是</strong></li>
+		</ul>
+		<Table columns={presentationColumns} dataSource={presentationData}/>
+	</div>
+)
 
 const RefusePop = ({ routes }) => (
 	<ul className="personalList examinationList clearfix">
@@ -355,6 +383,7 @@ class operationTable extends React.Component {
 			      <TabPane tab="评分卡" key="3"><Table columns={scoreCardColumns} dataSource={scoreCardData}/></TabPane>
 			      <TabPane tab="联系人情况" key="4"><Table columns={contactColumns} dataSource={contactData}/></TabPane>
 			      <TabPane tab="关联合同" key="5"><AssociatedContract /></TabPane>
+			      <TabPane tab="聚信力报告" key="6"><Presentation /></TabPane>
 			    </Tabs>
 		      </div>
 		      <div className="personalContent">
