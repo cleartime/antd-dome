@@ -25,10 +25,10 @@ class _Menu extends React.Component {
                 mode="horizontal"
             >
                 <Menu.Item key="mail">
-                    <Link to="/main/slide"><Icon type="mail" />顶部菜单1</Link>
+                    <Link to="/main/slide">ASP</Link>
                 </Menu.Item>
                 <Menu.Item key="app">
-                    <Link to="/main"><Icon type="appstore" />顶部菜单2</Link>
+                    <Link to="/main/right">顶部菜单2</Link>
                 </Menu.Item>
             </Menu>
         );

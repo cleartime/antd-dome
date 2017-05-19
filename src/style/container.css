@@ -4,11 +4,12 @@
 }
 .layoutMiddle{
   margin: 15px 30px 0;
-  height:100vh;
   background: #fff;
   padding: 15px;
   display: flex;
   flex-direction: row;
+  height: 100%;
+  min-height: 80vh;
 }
 .header{
   background: #fff;
@@ -28,7 +29,10 @@
   justify-content: center;
   align-items: center;
 }
-
+.one{
+	height: 70vh;
+	overflow: auto;
+}
 
 .header .login{
   padding-right: 30px;
@@ -39,8 +43,173 @@
 
 .sider{
   flex: 1;
+  max-width: 180px;
+  min-width: 180px;
 }
 .content{
   padding: 15px;
   flex: 3;
+}
+.letterTitle{
+	height: 27px;
+	line-height: 27px;
+	padding-left: 10px;
+	background-color: #ccc;
+}
+
+
+.centerDetail{
+	position: relative;
+	width: 100%;
+	min-width: 1000px;
+	overflow: auto;
+	display: inline-flex;
+}
+.contentDetail{
+	flex: 1;
+	height: 100%;
+	overflow: auto;
+}
+.personalContent{
+	width: 510px;
+	margin-left: 20px;
+}
+.container {
+  width: 100%;
+  min-height: 720px;
+  max-height: 1000px;
+  padding-right: 530px;
+}
+.tab-title-items {
+  bottom: 0;
+  display: table;
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  table-layout: fixed;
+  border-bottom: 1px solid #999;
+}
+
+.tab-title-item {
+  display: table-cell;
+  width: 1%;
+  height: 50px;
+  color: #333;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tab-title-item.active{
+  background-color: #333;
+  color: #fff;
+}
+
+.tab-content-item{
+  display: none;
+}
+.tab-content-item.active{
+  display: block;
+}
+.personal{
+	width: 510px;
+}
+.tablList{
+	width: 100%;
+}
+.tablList .ant-input-group-addon,.tablList .ant-input[disabled]{
+	background-color: #fff;
+	border: 0;
+}
+.ModifyTabl{
+	margin-bottom: 20px;
+}
+.ModifyTabl td{
+	padding: 5px 0;
+}
+.personal .ant-tabs-card{
+	margin-top: 20px;
+}
+.personalList{
+	padding: 5px 0;
+}
+.personalList li{
+	width: 250px;
+	float: left;
+	line-height: 18px;
+	padding: 3px 0;
+	font-size: 14px;
+	overflow: hidden;
+}
+.personalList li>span{
+	float: left;
+	width: 90px;
+	margin-right: 10px;
+	text-align: right;
+}
+.personalList li>strong{
+	float: left;
+	width: 150px;
+	word-wrap: break-word;
+	font-weight: normal;
+}
+.personalList li.personalBig{
+	width: 500px;
+}
+.personalList li.personalBig>strong{
+	width: 400px;
+}
+.personalList li>strong .ant-select{
+	width: 150px;
+}
+.personalList li>strong .ant-select-selection-selected-value{
+	width: 126px;
+}
+.examinationList li>span{
+	line-height: 28px;
+}
+.inputBox{
+	margin: 10px 10px 0;
+}
+.btnCenter{
+	margin-top: 20px;
+	text-align: right;
+}
+.btnCenter button{
+	margin-left: 10px;
+}
+.administrationList{
+	margin-top: 10px;
+}
+.administrationList li{
+	float: left;
+	width: 400px;
+	line-height: 28px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.administrationList li>span{
+	width: 90px;
+	float: left;
+	margin-right: 10px;
+	text-align: right;
+}
+.administrationList li>strong{
+	width: 300px;
+	float: left;
+}
+.administrationCenter .btnCenter{
+	margin-top: 0;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.login-form {
+  max-width: 300px;
+  margin: 160px auto;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 100%;
 }

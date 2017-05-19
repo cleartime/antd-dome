@@ -15,6 +15,9 @@ const columns = [{
     title: 'Age',
     dataIndex: 'age',
 }, {
+    title: '部门',
+    dataIndex: 'department',
+}, {
     title: 'Address',
     dataIndex: 'address',
 }];
@@ -22,6 +25,7 @@ const data = [{
     key: '1',
     name: 'John Brown',
     age: 32,
+    department: '技术部',
     address: 'New York No. 1 Lake Park',
 }, {
     key: '2',
@@ -46,7 +50,7 @@ const rowSelection = {
         console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
     },
     getCheckboxProps: record => ({
-        disabled: record.name === 'Disabled User',    // Column configuration not to be checked
+        disabled: record.name === 'Joe Black',    // Column configuration not to be checked
     }),
 };
 

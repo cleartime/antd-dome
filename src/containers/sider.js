@@ -12,13 +12,16 @@ class Sider extends React.Component {
         openKeys: [],
         list: [
             {
-                "id":600110230,
-                "name":"菜单一",
+                "id":600110231,
+                "name":"信审管理",
                 "icon": "shop",
                 "url":"",
                 "children":[
-                    { "id":600110231, "name":"菜单一子菜单一", "url":"/main/slide/table" },
-                    { "id":600110232, "name":"菜单一子菜单二", "url":"/main/slide/transfer" }
+                    { "id":600110231, "name":"信审统计", "url":"/main/slide/letter" },
+                    { "id":600110232, "name":"急速贷人工信审", "url":"/main/slide/artificialLetter" },
+                    { "id":600110233, "name":"操作栏", "url":"/main/slide/operation" },
+                    { "id":600110234, "name":"申请条件查询", "url":"/main/slide/conditionQuery" },
+                    { "id":600110235, "name":"信审记录查询", "url":"/main/slide/recordQuery" },
                 ]
             },
             {
@@ -37,7 +40,7 @@ class Sider extends React.Component {
                 "icon": "tool",
                 "url":"",
                 "children":[
-                    { "id":600110431, "name":"菜单三子菜单一", "url":"/main/slide" },
+                    { "id":600110431, "name":"菜单三子菜单一", "url":"/main/slide/table" },
                 ]
             },
 
@@ -78,15 +81,17 @@ class Sider extends React.Component {
                   openKeys={this.state.openKeys}
                   onOpenChange={this.onOpenChange}
                   mode="inline"
+                  defaultSelectedKeys={['1']}
+          		  defaultOpenKeys={['sub1']}
                   selectedKeys={[this.state.current]}
             >
                 {
                     this.state.list.map((subMenu, index) => (
                         <SubMenu key={index} title={
                             <span>
-                  <Icon type={subMenu.icon} />
-                  <span>{subMenu.name}</span>
-                </span>}>
+			                  <Icon type={subMenu.icon} />
+			                  <span>{subMenu.name}</span>
+			                </span>}>
                             {
                                 subMenu.children.map((menu) => (
                                     <Menu.Item key={`/${menu.url}`}
