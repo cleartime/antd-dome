@@ -13,9 +13,10 @@ import { Header, Sider, Login, Error, Content, Right } from './views';
 import { Table, Transfer, Letter, Operation, ArtificialLetter, RecordQuery, ConditionQuery } from './components';
 import { Layout } from 'antd';
 
+
 const App = ({ routes }) => (
 	<Layout className="layout">
-        <Header/>
+        <Header  style={{ position: 'fixed', width: '100%' }}/>
         {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route}/>
         ))}

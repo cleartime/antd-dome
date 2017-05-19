@@ -3,18 +3,19 @@
   width: 100vw;
 }
 .layoutMiddle{
-  margin: 15px 30px 0;
+  margin: 80px 30px 0;
   background: #fff;
   padding: 15px;
   display: flex;
   flex-direction: row;
   height: 100%;
-  min-height: 80vh;
+  height: 80vh;
 }
 .header{
   background: #fff;
   height: 64px;
   line-height: 64px;
+  z-index: 111;
 }
 
 .header .logo{

@@ -11,7 +11,7 @@ import {Row, Col} from 'antd';
 class Header extends React.Component {
     render() {
         return (
-            <div className="header">
+            <div className="header" style={{ position: 'fixed', width: '100%' }}>
                 <Row>
                     <Col span={6} className='logo'>
                         <Link to="/"><img src={require('../../public/assets/img/logo.png')} alt="" width={60}/></Link>
