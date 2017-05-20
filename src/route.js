@@ -4,27 +4,27 @@
 
 import React from 'react'
 import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect
+	BrowserRouter as Router,
+	Route,
+	Link,
+	Redirect
 } from 'react-router-dom'
-import {Header, Sider, Login,Error} from './views';
-import {Table, Transfer} from './components';
-import {Layout} from 'antd';
+import { Header, Sider, Login, Error, Content, Right } from './views';
+import { Table, Transfer, Letter, Operation, ArtificialLetter, RecordQuery, ConditionQuery } from './components';
+import { Layout } from 'antd';
 
 
-const App = ({routes}) => (
-    <Layout className="layout">
-        <Header/>
+const App = ({ routes }) => (
+	<Layout className="layout">
+        <Header  style={{ position: 'fixed', width: '100%' }}/>
         {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route}/>
         ))}
     </Layout>
 )
 
-const Contont = ({routes}) => (
-    <div className="layoutMiddle">
+const Contont = ({ routes }) => (
+	<div className="layoutMiddle">
         <div className="sider">
             <Sider/>
         </div>
@@ -37,8 +37,9 @@ const Contont = ({routes}) => (
 )
 
 
+
 const RouteWithSubRoutes = (route) => (
-    <div>
+	<div>
         {
             route.redirect?<Redirect to={route.redirect}/>:
             <Route path={route.path} render={props => (
@@ -49,7 +50,7 @@ const RouteWithSubRoutes = (route) => (
 )
 
 const RouteConfig = () => (
-    <Router>
+	<Router>
         <div>
             {route.map((route, i) => (
                 <RouteWithSubRoutes key={i} {...route}/>
@@ -58,41 +59,62 @@ const RouteConfig = () => (
     </Router>
 )
 
-
-const route = [
-    {
-        path:"/",
-        redirect:'/main'
-    },
-    {
-        path: '/login',
-        component: Login,
-    },
-    {
-        path: '/main',
-        component: App,
-        routes: [
-            {
-                path: '/main/slide',
-                component: Contont,
-                routes: [
-                    {
-                        path: '/main/slide/table',
-                        component: Table
-                    },
-                    {
-                        path: '/main/slide/transfer',
-                        component: Transfer
-                    }
-                ]
-            }]
-    },
-    {
-        path:'404',
-        component: Error,
-    }
+const route = [{
+		path: "/",
+		redirect: '/main/slide/operation'
+	},
+	{
+		path: '/login',
+		component: Login,
+	},
+	{
+		path: '/main',
+		component: App,
+		routes: [{
+				path: '/main/slide',
+				component: Contont,
+				routes: [{
+						path: '/main/slide/table',
+						component: Table
+					},
+					{
+						path: '/main/slide/transfer',
+						component: Transfer
+					},
+					{
+						path: '/main/slide/letter',
+						component: Letter
+					},
+					{
+						path: '/main/slide/operation',
+						component: Operation
+					},
+					{
+						path: '/main/slide/artificialLetter',
+						component: ArtificialLetter
+					},
+					{
+						path: '/main/slide/conditionQuery',
+						component: ConditionQuery
+					},
+					{
+						path: '/main/slide/recordQuery',
+						component: RecordQuery
+					}				
+				]
+			},
+			{
+				path: '/main/right',
+				component: Right,
+			}
+		]
+	},
+	{
+		path: '404',
+		component: Error,
+	}
 ]
 
 export {
-    RouteConfig,
+	RouteConfig,
 }

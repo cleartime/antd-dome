@@ -46,6 +46,7 @@
     "promise": "7.1.1",
     "react-dev-utils": "^0.5.2",
     "react-router-dom": "^4.1.1",
+    "react-dom": "^15.5.4",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.13.2",
     "url-loader": "0.5.7",

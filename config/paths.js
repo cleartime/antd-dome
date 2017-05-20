@@ -46,7 +46,7 @@ function ensureSlash(path, needsSlash) {
 }
 
 function getPublicUrl(appPackageJson) {
-  return envPublicUrl || require(appPackageJson).homepage;
+    return envPublicUrl || require(appPackageJson).homepage;
 }
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
@@ -56,11 +56,8 @@ function getPublicUrl(appPackageJson) {
 // We can't use a relative path in HTML because we don't want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
 function getServedPath(appPackageJson) {
-  var publicUrl = getPublicUrl(appPackageJson);
-  var servedUrl = envPublicUrl || (
-    publicUrl ? url.parse(publicUrl).pathname : './'
-  );
-  return ensureSlash(servedUrl, true);
+  var publicUrl = require(appPackageJson).publicPath.dev;
+  return ensureSlash(publicUrl, true);
 }
 
 // config after eject: we're in ./config/
@@ -76,5 +73,5 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   nodePaths: nodePaths,
   publicUrl: getPublicUrl(resolveApp('package.json')),
-  servedPath: getServedPath(resolveApp('package.json'))
+  servedPath: getServedPath(resolveApp('config.json'))
 };
